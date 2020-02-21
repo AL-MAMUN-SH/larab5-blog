@@ -49,6 +49,7 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = Hash::make($data['password']);
         User::create($data);
+        dd($data);
         session()->flash('message','User created successfully');
         return redirect()->route('user.index');
     }
